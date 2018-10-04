@@ -1,5 +1,5 @@
 # PoPS_API
-
+[![Build Status](https://travis-ci.org/ncsu-landscape-dynamics/PoPS_API.svg?branch=master)](https://travis-ci.org/ncsu-landscape-dynamics/PoPS_API)
 > Backend Component to PoPs
 
 
