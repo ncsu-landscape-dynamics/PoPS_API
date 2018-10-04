@@ -7,7 +7,7 @@
 ## Requirements
 
 Install [Docker](https://www.docker.com/get-started)
-Add a local data directory to project
+
 ## Start docker
 
 ```
