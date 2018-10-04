@@ -22,12 +22,13 @@ This should connect you for now until this bug is fixed.
 
 The api should now be running on [localhost:3030](http://localhost:3030)
 
-# Don't worry about this unless you are making changes to the Dockerfile
 ## About
 
 This project uses [Feathers](http://feathersjs.com). An open source web framework for building modern real-time applications.
 
 ## Getting Started
+
+> Don't worry about this unless you are making changes to the Dockerfile
 
 Getting up and running is as easy as 1, 2, 3.
 
