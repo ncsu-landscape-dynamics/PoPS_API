@@ -6,5 +6,29 @@
     "default": 10,
     "max": 50
   },
-  "mongodb": "mongodb://mongo:27017/po_ps_api"
+  "mongodb": "mongodb://mongo:27017/po_ps_api",
+  "authentication": {
+    "secret": "ed2891d5d6bfb80f10fc5f3aa9fdda14a7b15c9c6530299d864e072a8ca02420f4a21b646eb98dc4f69901e82e5ef26fc78ac519368707b1959cbc6e1ca6297b3c0a2e6cb2375586f179e39a26516750e2e8cec9fe43d6787697586640b72662f013a89ee2f6f8b24ef1c9ce5b8d2f3f0accecf27e55d7f384df6271068b40874d60900a1e16c5af5d0535992030aad7ed6aa1427d19d70e23a9430e86e1605ae1eb2636bbf218aae1dca11383c9e9e85dafe90eb65b280f869e9ab95e0668ac036ca1b642f64d5c0f0cfe4a4a736e5d631d57b71fe0b8a83cf5b2ba91d7e98c5e7b6d39d5654e102c248f8487c0015bb1f1194a86d6df7642a15ee7c60c31a4",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  }
 }

@@ -1,73 +1,2011 @@
-<html>
-  <head>
-    <title>Welcome to Feathers</title>
+<!DOCTYPE html>
+<html lang="en">
+ <!-- START Head -->
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    <title>
+         PoPS | Case studies
+    </title>
+
+    <!--START Loader -->
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html, body {
-        font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
-        font-weight: 400;
-        font-size: 16px;
-        color: #333;
-      }
-
-      .center-text {
-        text-align: center;
-      }
-
-      main {
-        margin-top: 100px;
-        padding: 20px;
-      }
-
-      img.logo {
-        display: block;
-        margin: 0 auto;
-        max-width: 100%;
-        margin-bottom: 30px;
-      }
-
-      h2 {
-        font-size: 2em;
-        font-weight: 100;
-      }
-
-      footer {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 20px;
-      }
-
-      footer p {
-        font-weight: 300;
-        font-size: 1.0em;
-      }
-
-      a {
-        color: #31D8A0;
-        text-decoration: none;
-      }
-
-      a:hover,
-      a:focus {
-        color: #31D8A0;
-      }
+        #initial-loader{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;width:100%;background:#212121;position:fixed;z-index:10000;top:0;left:0;bottom:0;right:0;transition:opacity .2s ease-out}#initial-loader .initial-loader-top{display:flex;align-items:center;justify-content:space-between;width:200px;border-bottom:1px solid #2d2d2d;padding-bottom:5px}#initial-loader .initial-loader-top > *{display:block;flex-shrink:0;flex-grow:0}#initial-loader .initial-loader-bottom{padding-top:10px;color:#5C5C5C;font-family:-apple-system,"Helvetica Neue",Helvetica,"Segoe UI",Arial,sans-serif;font-size:12px}@keyframes spin{100%{transform:rotate(360deg)}}#initial-loader .loader g{transform-origin:50% 50%;animation:spin .5s linear infinite}body.loading {overflow: hidden !important} body.loaded #initial-loader{opacity:0}
     </style>
-  </head>
-  <body>
-    <main class="container">
-      <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAk4AAABkCAMAAABHL0++AAADAFBMVEUAAAD///+AgIBVVVVAQEAzMzNVVVVJSUlAQEA5OTkzMzNGRkZAQEA7Ozs3NzczMzNAQEA8PDw5OTk2NjYzMzM9PT06Ojo3Nzc1NTUzMzM7Ozs5OTk3Nzc1NTUzMzM6Ojo4ODg2NjY1NTUzMzM5OTk3Nzc2NjY0NDQzMzM4ODg3Nzc1NTU0NDQzMzM3Nzc2NjY1NTU0NDQzMzM3Nzc2NjY1NTU0NDQzMzM3Nzc2NjY1NTU0NDQzMzM2NjY1NTU1NTU0NDQzMzM2NjY1NTU1NTU0NDQzMzM2NjY1NTU0NDQ0NDQzMzM2NjY1NTU0NDQ0NDQzMzM2NjY1NTU0NDQ0NDQzMzM1NTU1NTU0NDQ0NDQzMzM1NTU1NTU0NDQ0NDQzMzM1NTU1NTU0NDQ0NDQzMzM1NTU1NTU0NDQzMzMzMzM1NTU0NDQ0NDQzMzMzMzM1NTU0NDQ0NDQzMzMzMzM1NTU0NDQ0NDQzMzMzMzM1NTU0NDQ0NDQzMzMzMzM1NTU0NDQ0NDQzMzMzMzM1NTU0NDQ0NDQzMzMzMzM1NTU0NDQ0NDQzMzMzMzM0NDQ0NDQ0NDQzMzMzMzM0NDQ0NDQ0NDQzMzMzMzM0NDQ0NDQ0NDQzMzMzMzM0NDQ0NDQ0NDQzMzMzMzM0NDQ0NDQ0NDQzMzMzMzM0NDQ0NDQ0NDQzMzMzMzM0NDQ0NDQ0NDQzMzMzMzM0NDQ0NDQ0NDQzMzMzMzM0NDQ0NDQ0NDQzMzMzMzM0NDQ0NDQ0NDQzMzMzMzM0NDQ0NDQ0NDQzMzMzMzM0NDQ0NDQ0NDQzMzMzMzM0NDQ0NDQ0NDQzMzMzMzM0NDQ0NDQzMzMzMzMzMzM0NDQ0NDQzMzMzMzMzMzM0NDQ0NDQzMzMzMzMzMzM0NDQ0NDQzMzMzMzMzMzM0NDQ0NDQzMzMzMzMzMzM0NDQ0NDQzMzMzMzMzMzM0NDQ0NDQzMzMzMzMzMzM0NDQ0NDQzMzMzMzMzMzM0NDQ0NDQzMzMzMzMzMzM0NDQ0NDQzMzMzMzMzMzN4a/VhAAAA/3RSTlMAAQIDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobHB0eHyAhIiMkJSYnKCkqKywtLi8wMTIzNDU2Nzg5Ojs8PT4/QEFCQ0RFRkdISUpLTE1O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" alt="Feathers Logo">
-      <h2 class="center-text">A REST and realtime API layer for modern applications.</h2>
+    <!--END Loader-->
 
-      <footer>
-        <p class="center-text">For more information on Feathers see <a href="https://docs.feathersjs.com" title="Feathers Documentation" target="blank">docs.feathersjs.com</a>.</p>
-      </footer>
-    </main>
-  </body>
+    <!-- SCSS Output -->
+    <!-- build:css assets/stylesheets/app.min.css -->
+    <link rel="stylesheet" href="assets/stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="assets/stylesheets/app.css">
+    <link rel="stylesheet" href="assets/stylesheets/plugins.css">
+    <!-- endbuild -->
+
+    <!-- START Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/images/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- END Favicon -->
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="atom.xml">
+
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-83862026-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- jekyll settings -->
+    <script>
+        var ASSET_PATH_BASE = '';
+    </script>
+
+    <!-- Mapbox settings -->
+
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body { right-margin:50px ; padding:2 2 2 2; }
+        #map { position:relative; top:0; bottom:0}
+        .map-overlay {
+            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            position: relative;
+            width: 25%;
+            top: 65%;
+            left: 73%;
+            margin-left: 20px;
+            color: black;
+            padding: 10px;
+        }
+
+        .map-overlay .map-overlay-inner {
+            background-color: rgba(0, 0, 0, 0.40);
+            box-shadow:0 1px 2px rgba(0, 0, 0, 0.20);
+            border-radius: 5px;
+            padding: 10px;
+            opacity: 80%;
+            margin-bottom: 10px;
+        }
+
+        .map-overlay h2 {
+            line-height: 24px;
+            display: block;
+            margin: 0 0 10px;
+        }
+
+        .map-overlay .legend .bar {
+            height: 10px;
+            width: 100%;
+            background: linear-gradient(to right, #e3ea09, #1f1033);
+        }
+
+        .map-overlay input {
+            background-color: transparent;
+            display: inline-block;
+            width: 100%;
+            position: relative;
+            margin: 0;
+            cursor: ew-resize;
+        }
+    </style>
+
+
+</head>
+<!-- END Head -->
+
+
+
+<body class="sidebar-full-height">
+
+    <script src="assets/vendor/js/lib.min.js"></script>
+
+    <div class="main-wrap">
+        <nav class="navigation">
+            <!-- START Navbar -->
+<div class="navbar-inverse navbar navbar-fixed-top">
+       <div class="container-fluid">
+
+           <div class="navbar-header">
+            <a class="current navbar-brand" href="starter.html">
+                <img alt="Pops_logo" class="h-20" src="assets/images/PoPSS_Logo-linear.png">
+            </a>
+            <button class="navbar-toggle collapsed" data-target="#navbar" data-toggle="collapse" type="button">
+                <i class="fa fa-fw fa-user text-white"></i>
+            </button>
+            <button class="action-sidebar-open navbar-toggle collapsed" type="button">
+                <i class="fa fa-fw fa-bars text-white"></i>
+            </button>
+          </div>
+
+        <div class="collapse navbar-collapse" id="navbar">
+
+            <!-- START Search Mobile -->
+            <div class="form-group hidden-lg hidden-md hidden-sm m-t-2">
+                <div class="input-group hidden-lg hidden-md">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="button"><i class="fa fa-fw fa-search"></i></button>
+                    </span>
+                </div>
+            </div>
+            <!-- END Search Mobile -->
+
+            <!-- START Left Side Navbar -->
+            <ul class="nav navbar-nav navbar-left clearfix yamm">
+
+                <!-- START Switch Sidebar ON/OFF -->
+                <li id="sidebar-switch" class="hidden-xs">
+                    <a class="action-toggle-sidebar-slim" data-placement="bottom" data-toggle="tooltip" href="#" title="Slim sidebar on/off">
+                        <i class="fa fa-lg fa-bars fa-fw"></i>
+                    </a>
+                </li>
+                <!-- END Switch Sidebar ON/OFF -->
+
+                <li class="spin-search-box clearfix hidden-xs">
+                    <a href="#" class="pull-left">
+                        <i class="fa fa-search fa-lg icon-inactive"></i>
+                        <i class="fa fa-close  fa-lg icon-active"></i>
+                    </a>
+                    <div class="input-group input-group-sm pull-left p-10">
+                        <input type="text" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn active">
+                            <button class="btn btn-primary" type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </li>
+            </ul>
+            <!-- START Left Side Navbar -->
+
+            <!-- START Right Side Navbar -->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Sign Out<i class="m-l-1 fa-lg fa fa-fw fa-sign-out m-r-1"></i></a></li>
+
+            </ul>
+            <!-- END Right Side Navbar -->
+        </div>
+
+    </div>
+</div>
+<!-- END Navbar -->
+
+ <!-- START Sidebars -->
+<aside class="navbar-default sidebar affix-top ps-container ps-theme-default">
+
+    <!-- <div class="sidebar-overlay-head">
+        <img src="assets/images/spin-logo-inverted.png">
+        <a href="javascript:void(0)" class="sidebar-switch action-sidebar-close">
+            <i class="fa fa-times"></i>
+        </a>
+    </div> -->
+    <div class="sidebar-logo">
+        <img class="logo-default" src="assets/images/PoPSS_Logo-big_linear.png" alt="Logo" width="90">
+        <!-- <img class="logo-slim" src="assets/images/spin-logo-slim.png" alt="Logo"> -->
+    </div>
+
+    <div class="sidebar-content">
+        <!-- START Tree -->
+        <ul class="side-menu m-t-2">
+
+            <li>
+                <a href="about.html" title="case study">
+                    <span class="nav-label">about</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="login.html" title="case study">
+                    <span class="nav-label">login</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="register.html" title="case study">
+                    <span class="nav-label">Register</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html" title="about">
+                    <span class="nav-label">Case studies</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="dashboard.html" title="case study">
+                    <span class="nav-label">Dashboard</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="report.html" title="case study">
+                    <span class="nav-label">Report</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="input_data.html" title="case study">
+                    <span class="nav-label">Inputs</span>
+                </a>
+            </li>
+
+
+        </ul>
+        <!-- END Tree  -->
+
+        <div class="sidebar-default-visible"><hr></div>
+
+    </div>
+</aside>
+<!-- END Sidebars -->
+
+        </nav>
+
+        <div class="content">
+            <!-- START Sub-Navbar with Header only-->
+<div class="sub-navbar sub-navbar__header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-header m-t-0">
+                    <h3 class="m-t-0">Case Studies</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Sub-Navbar with Header only-->
+
+<div class="row" style="margin-left:15px; margin-right:15px">
+    <!-- START EDIT CONTENT -->
+
+    <div class="row m-t-3">
+        <!-- START #3 Widgets -->
+
+        <!-- <div class="col-lg-16">
+            <p class="m-b-3"><span class="text-white">Select Case studies </span></p>
+        </div> -->
+
+
+    </div>
+
+        <!-- END Traffic by Day -->
+
+        <!-- START map -->
+        <div class="row m-t-3">
+
+            <div class="panel panel-default  no-bg b-a-2 b-gray-dark">
+
+                <!-- START Heading with Mpaxbox button groups -->
+                <div class="panel-heading">
+                    <div class="btn-group pull-right" role="group" aria-label="...">
+                        <button type="button" id= "sattelite" class="btn btn-sm btn-default">Sattelite</button>
+                        <button type="button" id= "dark" class="btn btn-sm btn-default">Dark</button>
+                        <button type="button" id= "terrain" class="btn btn-sm btn-default">terrain</button>
+                        <button type="button" id= "moonlight" class="btn btn-sm btn-default">Moonlight</button>
+                    </div>
+                    <h3 class="panel-title">Click on the blue boundaries to select a case study</h3>
+                </div>
+
+                <!-- END Heading -->
+
+                <!-- START Content -->
+                <div id='map' class="panel-body" style = "height: 600px">
+
+                    <script src="//unpkg.com/@feathersjs/client@^3.0.0/dist/feathers.js"></script>
+                    <script src="/socket.io/socket.io.js"></script>
+                <script>
+                  mapboxgl.accessToken = 'pk.eyJ1IjoicGF5YW0tdGFicml6aWFuIiwiYSI6ImNqazA4dTBoMjA0YjYza3BocDJ4eHJpdjMifQ.Pxk2_LH_1_V79ZJMJdo6Xw';
+                  const socket = io();
+                  // Initialize our Feathers client application through Socket.io
+                  // with hooks and authentication.
+                  const client = feathers();
+                  client.configure(feathers.socketio(socket));
+                  
+                  var map = new mapboxgl.Map({
+                      container: 'map',
+                      style: 'mapbox://styles/payam-tabrizian/cjl2trc6m3gut2smkufdfosxt',
+                      center: [-100.154,39.526],
+                      zoom: 3.5
+                  });
+
+                  function addDataLayer() {
+                    map.addLayer({
+                        'id': 'case-studies',
+                        'type': 'line',
+                        'source': {
+                            'type': 'geojson',
+                            'data': {
+                                'type': 'FeatureCollection',
+                                "features": [{
+                                'type': 'Feature',
+                                'properties': {
+                                     'title': 'Spotted Lanternfly, PA, NJ, MD, VA, DE',
+                                     'description': 'Spread of spotted lanternfly from 2017 infection locations through 2022 using tree of heaven as the only host.\
+                                                     The model runs on a monthly time step from May to November at a 1 km resolution.\
+                                                     The model uses temperature thresholds for spread of spotted lanternfly and for survival over winter.',
+                                     'photoName': 'FLY',
+
+                                     'patogenName': 'Lycorma delicatula',
+                                     'patogenDescirption': 'The spotted lanternfly (Lycorma delicatula) is a planthopper native to China, India, and Vietnam. Although \
+                                     it has two pairs of wings, it jumps more than it flies. \
+                                     Its host plants are grapes, pines, stone fruits, and Malus species. \
+                                     In its native habitat it is kept in check by natural predators or pathogens. \
+                                     It was accidentally introduced in Korea in 2006 and is since considered a pest. \
+                                     In September 2014, it was first spotted in the United States.',
+
+                                     'hostName': 'Ailanthus altissima',
+                                     'hostDescirption': 'Ailanthus altissima \
+                                      commonly known as tree of heaven, ailanthus, \
+                                      is a deciduous tree in the Simaroubaceae family. It is native to both northeast and central China,\
+                                      as well as Taiwan. Unlike other members of the genus Ailanthus,\
+                                      it is found in temperate climates rather than the tropics. \
+                                      The tree grows rapidly and is capable of reaching heights of 15 metres (49 ft) in 25 years. ',
+                                      'zoom': 5 ,
+                                 },
+                                 'geometry': {
+                                     'type': 'Polygon',
+                                     'coordinates': [[[-82.64172725, 41.993922],//Top right
+                                                     [-73.9027364, 41.993922],  //Top left
+                                                     [-73.9027364, 36.5768566], //bottom left
+                                                     [-82.6417272, 36.5768566],
+                                                     [-82.64172725, 41.993922]]], //bottom right
+                                            }
+                                 },{
+                                   'type': 'Feature',
+                                   'properties': {
+                                    'title': 'Sudden Oak Death, CA',
+                                    'description': 'An invasive forest disease, sudden oak death, \
+                                    is spreading along the west coast of the United States causing sweeping environmental and economic consequences. \
+                                    This project helps land managers in southwestern Oregon explore which management scenarios might be the most \
+                                    effective at containing this disease.',
+                                    'photoName': 'SOD',
+
+                                    'patogenName': 'Phytophthora ramorum',
+                                    'patogenDescirption': 'Phytophthora ramorum is the oomycete plant pathogen known to\
+                                      cause the disease sudden oak death (SOD). The disease kills oak and other species of\
+                                      trees and has had devastating effects on the oak populations in California and Oregon, as well\
+                                      as being present in Europe. Symptoms include bleeding cankers on the trees trunk and dieback of the foliage,\
+                                      in many cases eventually leading to the death of the tree.',
+
+                                    'hostName': 'Notholithocarpus densiflorus',
+                                    'hostDescirption': 'Notholithocarpus densiflorus, \
+                                    commonly known as the tanoak or tanbark-oak, is an evergreen tree in the beech family \
+                                    (Fagaceae), native to the western United States, in California as far south as the Transverse Ranges, \
+                                    north to southwest Oregon, and east in the Sierra Nevada. It can reach 40 m (130 ft) tall (though 15–25 m (49–82 ft) \
+                                    is more usual) in the California Coast Ranges, and can have a trunk diameter of 60–190 cm (24–75 in).',
+
+
+                                    'zoom': 10 ,
+                                },
+                                'geometry': {
+                                'type': 'Polygon',
+                                'coordinates': [[[-122.6040996, 38.4142861],//Top right
+                                                [-122.4894757, 38.4167006],  //Top left
+                                                [-122.4864704,38.3267739], //bottom left
+                                                [-122.6009561,38.3243623],
+                                                [-122.6040996, 38.4142861]]], //bottom right
+                                            }
+                                }]
+                        }
+
+                        },
+                        'layout': {},
+                        'paint': {
+                            'line-color': '#01D8FE',
+                            "line-width": 3
+                        }
+
+
+
+
+                    });
+                  }
+
+                  map.on('load', function () {
+                     const token = localStorage.getItem("feathers-jwt");
+                     const caseStudies = client.service('case-studies').find({
+                            query: {},
+                            headers: { 
+                                'X-Requested-With': 'FeathersJS',
+                                'Authentication': token
+                            }
+                      }).then(caseStudies=> {
+                        console.log(caseStudies.data)
+                         map.addLayer({
+                            'id': 'case-studies',
+                            'type': 'line',
+                            'layout': {},
+                            'paint': {
+                                'line-color': '#01D8FE',
+                                "line-width": 3
+                            },
+                            'source': {
+                                'type': 'geojson',
+                                'data': {
+                                    'type': 'FeatureCollection',
+                                    "features": [{  
+                                    'type': 'Feature',
+                                    'properties':caseStudies.data[0],
+                                    'geometry': caseStudies.data[0].location
+                                    }]
+
+                                }
+                            }
+                        });
+                        
+                        map.on('mousemove', 'case-studies', function (e) {
+                          var description = e.features[0].properties.description;
+                          var title = e.features[0].properties.name;
+                          var photoSrc= "assets\\images\\case_studies\\" + e.features[0].properties.temperature_data + ".tif";
+
+                          var pathogenAvatar= "assets\\images\\case_studies\\" + e.features[0].properties.photoName + "_pathogen.jpg";
+                          var pathogenName= e.features[0].properties.patogenName;
+                          var pathogenDescription= e.features[0].properties.patogenDescirption;
+
+                          var hostAvatar= "assets\\images\\case_studies\\" + e.features[0].properties.photoName + "_host.jpg";
+                          var hostName= e.features[0].properties.pest;
+                          var hostDescription= e.features[0].properties.hostDescirption;
+                          var zoom = e.features[0].properties.zoom;
+
+                          map.flyTo({center: e.lngLat, zoom: zoom});
+
+                          document.getElementById('case-study-title').innerText = title;
+                          document.getElementById('case-study-description').innerText = description;
+                          document.getElementById("case-study-image").src = photoSrc;
+
+                          document.getElementById('pathogen-name').innerText = pathogenName;
+                          document.getElementById('pathogen-description').innerText = pathogenDescription;
+                          document.getElementById("pathogen-avatar").src = pathogenAvatar;
+
+                          document.getElementById('host-name').innerText = hostName;
+                          document.getElementById('host-description').innerText = hostDescription;
+                          document.getElementById("host-avatar").src = hostAvatar;
+
+
+                      });
+
+                      });
+                      
+                      
+                      
+                      // Change it back to a pointer when it leaves.
+                      map.on('mouseleave', 'case-studies', function () {
+                          map.getCanvas().style.cursor = '';
+                      });
+
+                      map.on('style.load', function () {
+                        // Triggered when `setStyle` is called.
+                        addDataLayer();
+                      });
+
+                      document.getElementById("sattelite").addEventListener("click", function( event ) {
+                        map.setStyle('mapbox://styles/payam-tabrizian/cjl48xtkb0ho82rqr69liejhf');
+                      }, false);
+
+                      document.getElementById("dark").addEventListener("click", function( event ) {
+                        map.setStyle('mapbox://styles/payam-tabrizian/cjk1ljl2218oc2soya6oxztwm');
+                      }, false);
+
+
+                      document.getElementById("terrain").addEventListener("click", function( event ) {
+                        map.setStyle('mapbox://styles/payam-tabrizian/cjl49km6s3e012ro7545jbtmq');
+                      }, false);
+
+                      document.getElementById("moonlight").addEventListener("click", function( event ) {
+                        map.setStyle('mapbox://styles/payam-tabrizian/cjl2trc6m3gut2smkufdfosxt');
+                      }, false);
+                  });
+
+              </script>
+
+
+                </div>
+                <!-- END Content -->
+
+                <!-- START Footer -->
+                <div class="panel-footer text-center">
+                    <a href="#" class="text-muted">See More<i class="m-l-1 fa fa-angle-right"></i></a>
+                </div>
+                <!-- END Footer -->
+
+            </div>
+        </div>
+        <!-- END Results -->
+
+
+        <!-- END Map -->
+    </div>
+
+    <div class="row m-t-1">
+
+        <!-- START ROW Case_study Widget -->
+            <!-- START Monitor -->
+            <div class="col-lg-4">
+              <div class="panel panel-default no-bg b-l-2 b-l-gray-lighter b-t-gray b-r-gray b-b-gray">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-center">Case study</h3>
+                    </div>
+                    <table class="table table-hover">
+                        <tbody>
+                          <tr></tr>
+                          <tr>
+                                <img id="case-study-image" src="assets\images\case_studies\default.jpg" alt="100%x200" style="max-width: 100%;
+    max-height: 100%;">
+                            </div>
+                          </tr>
+                            <tr>
+                                <td class="text-white"><h3><label id="case-study-title"></label></h3></td>
+
+                            </tr>
+                            <tr>
+                                <td class="text-white-light"><label id="case-study-description"></label></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- END Content -->
+
+                    <!-- START Footer -->
+                    <div class="panel-footer text-center">
+                        <a href="#" class="text-muted">See More<i class="m-l-1 fa fa-angle-right"></i></a>
+                    </div>
+                    <!-- END Footer -->
+                  </div>
+              </div>    <!-- END Heading -->
+        <!-- END ROW #1 Widgets -->
+
+        <!-- START ROW #2 Widgets -->
+        <div class="col-lg-3">
+
+            <!-- START Stock -->
+            <div class="panel panel-default b-l-danger no-bg b-gray-dark">
+
+                <!-- START Heading -->
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center">Pathogen species</h3>
+                </div>
+                <!-- END Heading -->
+
+                <!-- START Content -->
+
+                <table class="table table-hover">
+                    <tbody>
+                      <tr></tr>
+                      <tr>
+                        <div class="avatar avatar-lg avatar-image avatar-inline m-r-1 loaded" style = "margin-left:40%; margin-top:3%; margin-bottom:3%">
+                            <img id="pathogen-avatar" alt="Avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/davidcazalis/128.jpg">
+                        </div>
+                      </tr>
+                        <tr>
+                            <td class="text-white">Name</td>
+                            <td class="text-white-light"><label id="pathogen-name"></label></td>
+
+                        </tr>
+                        <tr>
+                            <td class="text-white">Description</td>
+                            <td class="text-white-light"><label id="pathogen-description"></label></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- END Content -->
+
+                <!-- START Footer -->
+                <div class="panel-footer text-center">
+                    <a href="#" class="text-muted">See More<i class="m-l-1 fa fa-angle-right"></i></a>
+                </div>
+                <!-- END Footer -->
+            </div>
+
+
+        </div>
+
+        <!-- Host Specifications-->
+        <div class="col-lg-3">
+
+            <!-- START Panel -->
+            <div class="panel panel-default b-l-success no-bg b-gray-dark">
+
+                <!-- START Heading -->
+                <div class="panel-heading">
+                  <h3 class="panel-title text-center">Host Species</h3>
+                </div>
+                <!-- END Heading -->
+
+                <!-- START Content -->
+
+                <table class="table table-hover">
+                    <tbody>
+                      <tr></tr>
+                      <tr>
+                        <div class="avatar avatar-lg avatar-image avatar-inline m-r-1 loaded" style = "margin-left:40%; margin-top:3%; margin-bottom:3%">
+                            <img id="host-avatar" alt="Avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/davidcazalis/128.jpg">
+                        </div>
+                      </tr>
+                        <tr>
+                            <td class="text-white">Name</td>
+                            <td class="text-white-light"><label id="host-name"></label></td>
+
+                        </tr>
+                        <tr>
+                            <td class="text-white">Description</td>
+                            <td class="text-white-light"><label id="host-description"></label></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- END Content -->
+
+                <!-- START Footer -->
+                <div class="panel-footer text-center">
+                    <a href="#" class="text-muted">See More<i class="m-l-1 fa fa-angle-right"></i></a>
+                </div>
+                <!-- END Footer -->
+            </div>
+
+
+        </div>
+
+        <!-- END Case_study Widgets -->
+    </div>
+
+
+
+    <!-- END EDIT CONTENT -->
+</div>
+
+<script src="assets/vendor/js/jquery.sparkline.min.js"></script>
+<script src="assets/vendor/js/highstock.min.js"></script>
+<script src="assets/vendor/js/highcharts-more.min.js"></script>
+<script src="assets/vendor/js/data.min.js"></script>
+<script src="assets/javascript/peity-settings.js"></script>
+<script src="assets/javascript/sparklines-settings.js"></script>
+<script src="assets/javascript/highchart-themes/highcharts&amp;highstock-theme.js"></script>
+<script src="assets/javascript/highchart-themes/highcharts-settings.js"></script>
+<script src="assets/javascript/highchart-themes/highstock-settings.js"></script>
+
+        </div>
+
+        <!-- START Layout Options (Right Side) -->
+<div class="layout-options">
+    <button type="button" class="btn btn-primary action-toggle-layout-options" data-toggle="tooltip" data-placement="left" title="Show/Hide Layout settings"><i class="fa fa-gear"></i></button>
+    <button type="button" class="btn btn-primary action-toggle-layout-options disabled" data-toggle="tooltip" data-placement="left" title="Layout settings disabled on this page"><i class="fa fa-gear"></i></button>
+
+    <div class="panel panel-default">
+
+        <div class="panel-body">
+            <!-- START Tabs: Options | Skins -->
+            <ul class="nav nav-tabs nav-justified tab-color-panel-bg">
+                <li role="presentation" class="active">
+                    <a aria-expanded="true" data-toggle="tab" href="#tab-options" role="tab">Options</a>
+                </li>
+                <li role="presentation">
+                    <a aria-expanded="true" data-toggle="tab" href="#tab-skins" role="tab">Skins</a>
+                </li>
+            </ul>
+            <!-- END Tabs: Options | Skins -->
+
+            <!-- START Tabs Content: Options & Skins -->
+            <div class="tab-content p-t-2">
+                <!-- START Tab Options -->
+                <div class="tab-pane fade in active p-r-1" id="tab-options" role="tabpanel">
+                    <!-- START: Navbar options v2-->
+
+
+                        <p class="small text-uppercase"><strong>Navbar Options</strong></p>
+
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="layout-navbar-enabled" class="group-switch" checked="checked" data-target-body-class="navbar-disabled" data-direction="disabled"> Show/Hide
+                            </label>
+
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="layout-navbar-fixed" data-target-body-class="navbar-fixed" data-direction="enabled"> Fixed
+                            </label>
+
+
+                    <!-- END: Navbar options v2-->
+
+                    <!-- START: SubNavbar options -->
+                    <div class="input-group">
+                        <p class="small text-uppercase m-t-2">
+                            <strong>Header Layout</strong>
+                        </p>
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="layout-subnavbar-enabled" class="group-switch" checked="checked" data-target-body-class="sub-navbar-disabled" data-direction="disabled"> Show/Hide
+                            </label>
+                        </div>
+                    </div>
+                    <select class="form-control m-b-1" id="layout-subnavbar-style">
+                        <option selected="selected" value="">Header 1</option>
+                        <option value="sub-navbar-header-only">Header 2</option>
+                    </select>
+                    <!-- END: SubNavbar options -->
+
+                    <!-- START: Sidebar options -->
+                    <div class="input-group">
+
+                        <p class="small text-uppercase m-t-2"><strong>Sidebar Options</strong></p>
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="layout-sidebar-enabled" class="group-switch" checked="checked" data-target-body-class="sidebar-disabled" data-direction="disabled"> Show/Hide
+                            </label>
+                        </div>
+
+                        <select class="form-control" id="layout-sidebar-style">
+                            <option selected="selected" value="">Default Sidebar</option>
+                            <option value="sidebar-slim">Slim Sidebar</option>
+                            <option value="sidebar-big-icons">Big Icons Sidebar</option>
+                            <option value="sidebar-big-icons sidebar-with-avatar">Big Icons with Avatar</option>
+                        </select>
+
+                        <div class="input-group p-t-1">
+                                <label for="layout-sidebar-fixed" class="checkbox-inline">
+                                    <input type="checkbox" id="layout-sidebar-fixed" data-target-body-class="sidebar-fixed" data-direction="enabled"> Fixed
+                                </label>
+
+                                <label for="layout-sidebar-full-height" class="checkbox-inline">
+                                    <input type="checkbox" id="layout-sidebar-full-height" data-target-body-class="sidebar-full-height" data-direction="enabled"> Aside
+                                </label>
+                        </div>
+
+                    </div>
+                    <!-- END: Sidebar options -->
+
+                    <!-- START: Content View -->
+                    <p class="small text-uppercase m-t-2"><strong>Content View</strong></p>
+                    <select class="form-control" id="layout-content-view">
+                        <option selected="selected" value="container">Container</option>
+                        <option value="container-fluid">Container Fluid</option>
+                        <option value="boxed-layout">Boxed</option>
+                    </select>
+                    <!-- END: Content View -->
+
+                    <!-- START: Footer Options -->
+                    <div class="input-group">
+                        <p class="small text-uppercase m-t-3"><strong>Footer Options</strong></p>
+
+                            <label for="layout-footer-enabled" class="checkbox-inline">
+                                <input type="checkbox" id="layout-footer-enabled" class="group-switch" checked="checked" data-target-body-class="footer-disabled" data-direction="disabled"> Show/Hide
+                            </label>
+
+                            <label for="layout-footer-fixed" class="checkbox-inline">
+                                <input type="checkbox" id="layout-footer-fixed" data-target-body-class="footer-fixed" data-direction="enabled"> Fixed
+                            </label>
+                    </div>
+                    <!-- END: Footer Options -->
+                </div>
+                <!-- END Tab Options -->
+
+                <!-- START Tab Skins -->
+                <div class="tab-pane fade in p-r-1" id="tab-skins" role="tabpanel">
+                    <p class="small text-uppercase"><strong>Main Color</strong></p>
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="mainColor" id="main-color-primary" value="primary" checked="checked">
+                            Primary
+                        </label>
+                        <i class="fa fa-circle pull-right text-primary"></i>
+                    </div>
+                    <div class="radio">
+                          <label>
+                            <input type="radio" name="mainColor" id="main-color-info" value="info">
+                            Info
+                        </label>
+                        <i class="fa fa-circle pull-right text-info"></i>
+                    </div>
+                    <div class="radio">
+                          <label>
+                            <input type="radio" name="mainColor" id="main-color-success" value="success">
+                            Success
+                        </label>
+                        <i class="fa fa-circle pull-right text-success"></i>
+                    </div>
+                    <div class="radio">
+                          <label>
+                            <input type="radio" name="mainColor" id="main-color-warning" value="warning">
+                            Warning
+                        </label>
+                        <i class="fa fa-circle pull-right text-warning"></i>
+                    </div>
+                    <div class="radio">
+                          <label>
+                            <input type="radio" name="mainColor" id="main-color-danger" value="danger">
+                            Danger
+                        </label>
+                        <i class="fa fa-circle pull-right text-danger"></i>
+                    </div>
+
+                    <!-- Single button -->
+          <!--          <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-circle text-primary"></i> Primary <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                    <li class="active"><a href="#"><i class="fa fa-circle text-primary"></i> Primary </a></li>
+                    <li><a href="#"><i class="fa fa-circle text-info"></i> Info </a></li>
+                    <li><a href="#"><i class="fa fa-circle text-success"></i> Success </a></li>
+                    <li><a href="#"><i class="fa fa-circle text-warning"></i> Warning </a></li>
+                    <li><a href="#"><i class="fa fa-circle text-danger"></i> Danger </a></li>
+                    <li><a href="#"><i class="fa fa-circle text-soft-purple"></i> Soft Purple </a></li>
+                    <li><a href="#"><i class="fa fa-circle text-lighting-yellow"></i> Lighting Yellow </a></li>
+                    </ul>
+                    </div>-->
+
+                    <p class="small text-uppercase m-t-2"><strong>Navbar</strong></p>
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="navbarStyle" id="navbar-style-dark" value="inverse" checked="checked">
+                            Dark
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="navbarStyle" id="navbar-style-light" value="default">
+                            Light
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="navbarStyle" id="navbar-style-color" value="color">
+                            Like Main Color
+                        </label>
+                    </div>
+
+                    <p class="small text-uppercase m-t-2"><strong>Sidebar</strong></p>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="sidebarStyle" id="sidebar-style-dark" value="dark" checked="checked">
+                            Dark
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="sidebarStyle" id="sidebar-style-light" value="light">
+                            Light
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="sidebarStyle" id="sidebar-style-color" value="color">
+                            Like Main Color
+                        </label>
+                    </div>
+                </div>
+                <!-- END Tab Skins -->
+
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button type="button" class="btn btn-default btn-block action-reset-layout-options">Reset Options</button>
+        </div>
+    </div>
+</div>
+<!-- END Layout Options (Right Side) -->
+ <div class="right-sidebar">
+    <!-- DodatkowyContent: data-target-extra-content wskazuje, że ten konkretny div ma być przykrywany przez kontener o id chatpanel2 -->
+    <div class="container-fluid" data-target-extra-content="chatpanel2">
+        <div class="row">
+
+            <!-- <a href="#" class="extra-content-open">Extra content Large</a>-->
+
+            <!-- START Tabs -->
+            <div class="tabbable-line">
+            <ul class="nav nav-tabs m-r-1 m-t-2">
+                <!-- Tab: Calendar -->
+                <li role="presentation" class="visible-xs">
+                    <a class="action-right-sidebar-toggle" href="javascript:void(0)" role="tab">
+                        <span class="fa fa-times"></span>
+                    </a>
+                </li>
+                <!-- Tab: Calendar -->
+                <li class="active" role="presentation">
+                    <a data-toggle="tab" href="#tab-calendar" role="tab"><span class="fa fa-calendar-o"></span></a>
+                </li>
+                <!-- Tab: Statisticts -->
+                <li role="presentation">
+                    <a data-toggle="tab" href="#tab-statistics" role="tab"><span class="fa fa-area-chart"></span></a>
+                </li>
+                <!-- Tab: Users -->
+                <li role="presentation">
+                    <a data-toggle="tab" href="#right-sidebar-users" role="tab"><span class="fa fa-users"></span></a>
+                </li>
+                <!-- Tab: Timeline -->
+                <li role="presentation">
+                    <a data-toggle="tab" href="#right-sidebar-timeline" role="tab"><span class="fa fa-list"></span></a>
+                </li>
+                 <!-- Tab: Settings -->
+                <li role="presentation">
+                    <a data-toggle="tab" href="#right-sidebar-settings" role="tab"><span class="fa fa-gear"></span></a>
+                </li>
+            </ul>
+            <!-- END Tabs -->
+
+            <!-- START Tab: Calendar -->
+            <div class="tab-content vertical-scroll-container" id="myTabContent">
+                <div class="tab-pane fade in active p-r-1" id="tab-calendar" role="tabpanel">
+
+                   <p class="small text-uppercase m-b-0 m-t-1"><strong>Weather</strong></p>
+                    <!-- START Widget - Weather Current -->
+                    <div class="m-t-0 m-b-3">
+                        <p class="display-4 text-white m-t-0 m-b-0">
+                            <span>Friday</span>
+                        </p>
+                        <span class="lead text-white m-t-0 m-b-0">30 June</span>
+                        <p class="m-t-2">Partly cloudy today, temperature minimum 11&#xBA;, maximum 15&#xBA;</p>
+                        <a href="../start/weather.html">More Details <i class="fa fa-angle-right"></i></a>
+                    </div>
+                    <!-- END Widget - Weather Current -->
+                    <!-- START Widget - Stock -->
+                    <table class="table table-condensed table-hover">
+                        <thead>
+                            <tr>
+                                <th class="small text-muted text-uppercase">
+                                    <strong>Stock</strong>
+                                </th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-white">DOW J</td>
+                                <td class="text-muted">17 552,89</td>
+                                <td class="text-right"><span class="label label-danger">-0.29%</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-white">APPL</td>
+                                <td class="text-muted">1 987</td>
+                                <td class="text-right"><span class="label label-success">+7.10%</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-white">CAC</td>
+                                <td class="text-muted">17 552,89</td>
+                                <td class="text-right"><span class="label label-danger">-0.29%</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-white">DAX</td>
+                                <td class="text-muted">1 987</td>
+                                <td class="text-right"><span class="label label-success">+7.10%</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- END Widget - Stock -->
+                    <!-- START Widget - Emails Today -->
+                    <table class="table m-t-2 m-b-3">
+                        <thead>
+                            <tr>
+                                <th class="small text-muted text-uppercase">
+                                    <strong>Emails Today </strong>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+    <td>
+        <div class="media">
+            <div class="media-left media-middle">
+                <a href="../apps/email-details.html">
+                    <div class="avatar"> <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/msveet/128.jpg" alt="Avatar"><i class="avatar-status avatar-status-bottom bg-success b-gray-darker"></i> </div>
+                </a>
+            </div>
+            <div class="media-body media-auto">
+                <h5 class="m-b-0"><span>Ron Gorczany</span> <small><span>11:08</span></small></h5>
+                <p class="m-t-0 m-b-0"><span>Facilis repudiandae non excepturi optio nam est et voluptas quia.</span></p>
+                                    <div class="btn-group" role="group">
+  <a role="button" class="btn btn-link btn-xs" href="../apps/email-details.html"><i class="fa fa-reply text-gray-light"></i></a>
+  <a role="button" class="btn btn-link btn-xs" href="../apps/email-details.html"><i class="fa fa-archive text-gray-light"></i></a>
+ <a role="button" class="btn btn-link btn-xs" href="../apps/email-details.html"><i class="fa fa-trash text-gray-light"></i></a>
+</div>
+                                </div>
+                            </div>
+                                </td>
+                            </tr>
+                                                 <tr>
+    <td>
+        <div class="media">
+            <div class="media-left media-middle">
+                <a href="../apps/email-details.html">
+                    <div class="avatar"> <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/damenleeturks/128.jpg" alt="Avatar"><i class="avatar-status avatar-status-bottom bg-danger b-gray-darker"></i> </div>
+                </a>
+            </div>
+            <div class="media-body media-auto">
+                <h5 class="m-b-0"><span>Vidal Douglas</span> <small><span>11:12</span></small></h5>
+                <p class="m-t-0 m-b-0"><span>Est culpa illum iusto architecto quis veniam omnis unde nihil.</span></p>
+                                    <div class="btn-group" role="group">
+  <a role="button" class="btn btn-link btn-xs" href="../apps/email-details.html"><i class="fa fa-reply text-gray-light"></i></a>
+  <a role="button" class="btn btn-link btn-xs" href="../apps/email-details.html"><i class="fa fa-archive text-gray-light"></i></a>
+ <a role="button" class="btn btn-link btn-xs" href="../apps/email-details.html"><i class="fa fa-trash text-gray-light"></i></a>
+</div>
+                                </div>
+                            </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+    <td>
+        <div class="media">
+            <div class="media-left media-middle">
+                <a href="../apps/email-details.html">
+                    <div class="avatar"> <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/megdraws/128.jpg" alt="Avatar"><i class="avatar-status avatar-status-bottom bg-warning b-gray-darker"></i> </div>
+                </a>
+            </div>
+            <div class="media-body media-auto">
+                <h5 class="m-b-0"><span>Desiree Pacocha</span> <small><span>07:55</span></small></h5>
+                <p class="m-t-0 m-b-0"><span>Dolore at quis eos rerum et distinctio sint et.</span></p>
+                                    <div class="btn-group" role="group">
+  <a role="button" class="btn btn-link btn-xs" href="../apps/email-details.html"><i class="fa fa-reply text-gray-light"></i></a>
+  <a role="button" class="btn btn-link btn-xs" href="../apps/email-details.html"><i class="fa fa-archive text-gray-light"></i></a>
+ <a role="button" class="btn btn-link btn-xs" href="../apps/email-details.html"><i class="fa fa-trash text-gray-light"></i></a>
+</div>
+                                </div>
+                            </div>
+                                </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+
+                    <!-- END Widget - Emails Today -->
+                    <!-- START Widget - Tasks -->
+                    <table class="table table-condensed m-t-2 m-b-0">
+                        <thead>
+                            <tr>
+                                <th class="small text-muted text-uppercase">
+                                    <strong>Tasks</strong>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">
+                                            <a href="../apps/tasks-details.html"><span>synthesizing the firewall won&apos;t do anything, we need to generate the solid state PNG interface!</span></a>
+                                            <span class="m-t-1 small"><i class="fa fa-history small text-gray-light"></i> <span>16-Oct-2013, 03:40</span> </span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="" checked="checked">
+                                            <del> <a href="../apps/tasks-details.html" class="text-muted"><span>Try to calculate the CSS protocol, maybe it will parse the neural bus!</span></a></del>
+                                            <span class="m-t-1 small"><i class="fa fa-history small text-gray-light"></i> <span>24-Jan-2015, 07:50</span> </span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                              <tr>
+                                <td>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="" checked="checked">
+                                            <del> <a href="../apps/tasks-details.html" class="text-muted"><span>We need to calculate the online SDD feed!</span></a></del>
+                                            <span class="m-t-1 small"><i class="fa fa-history small text-gray-light"></i> <span>27-Feb-2012, 02:25</span> </span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- END Widget - Emails Today -->
+
+                </div>
+                <!-- END Tab: Calendar -->
+
+                <!-- START Tab: Statistics -->
+                <div class="tab-pane fade p-r-1" id="tab-statistics" role="tabpanel">
+
+                     <p class="small text-uppercase m-b-0 m-t-1"><strong>Statisticts</strong></p>
+                    <!-- START Peity Charts -->
+                    <div class="row m-t-3">
+                        <div class="col-sm-4">
+                            <p class="data-attributes text-center">
+                                <span data-peity="{ &quot;fill&quot;: [&quot;#2A85C6&quot;, &quot;#222D33&quot;],  &quot;innerRadius&quot;: 20, &quot;radius&quot;: 28 }">4/7</span>
+                            </p>
+                            <h5 class="m-b-0 text-center">CPU
+                            </h5>
+                            <p class="small m-t-0 p-t-0 text-center">76%</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <p class="data-attributes text-center">
+                                <span data-peity="{ &quot;fill&quot;: [&quot;#2A85C6&quot;, &quot;#222D33&quot;],  &quot;innerRadius&quot;: 20, &quot;radius&quot;: 28 }">6/7</span>
+                            </p>
+                            <h5 class="m-b-0 text-center">Drive
+                            </h5>
+                            <p class="small m-t-0 p-t-0 text-center">98%</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <p class="data-attributes text-center">
+                                <span data-peity="{ &quot;fill&quot;: [&quot;#2A85C6&quot;, &quot;#222D33&quot;],  &quot;innerRadius&quot;: 20, &quot;radius&quot;: 28 }">2/7</span>
+                            </p>
+                            <h5 class="m-b-0 text-center">Memory
+                            </h5>
+                            <p class="small m-t-0 p-t-0 text-center">16%</p>
+                        </div>
+                    </div>
+                    <!-- END Peity Charts -->
+                    <!-- START Network -->
+                    <p class="small text-center text-uppercase m-t-2"><strong>Network</strong></p>
+                    <p class="text-nowrap text-center m-t-0">
+                        <span class="text-white small">21 KB/s</span> <i class="fa fa-level-down text-primary m-r-2"></i>
+                        <i class="fa fa-level-up text-primary"></i> <span class="text-white small">89 KB/s</span>
+                    </p>
+                    <!-- END Network -->
+                    <!-- START Table: System -->
+                    <table class="table m-t-2 table-condensed v-a-m">
+                        <thead>
+                            <tr>
+                                <th class="small"><i class="fa fa-database m-r-1"></i>
+                                    <span class="text-uppercase"><strong>system</strong></span></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="small v-a-m">
+                                    <td> Disabled </td>
+                                    <td class="text-right v-a-m text-white">1:36</td>
+                                </tr>
+                                <tr class="small v-a-m">
+                                    <td> Processing </td>
+                                    <td class="text-right v-a-m text-white"><span>63704</span></td>
+                                </tr>
+                                <tr class="small v-a-m">
+                                    <td> CPU User </td>
+                                    <td class="text-right v-a-m text-white">16%</td>
+                                </tr>
+                                <tr class="small v-a-m">
+                                    <td> CPU System </td>
+                                    <td class="text-right v-a-m text-white">19%</td>
+                                </tr>
+                                <tr class="small v-a-m">
+                                    <td> CPU Free </td>
+                                    <td class="text-right v-a-m text-white">78%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- END Table: System -->
+                        <!-- START Table: LAN -->
+                        <table class="table table-condensed v-a-m">
+                            <thead>
+                                <tr>
+                                    <th class="small"><i class="fa fa-wifi m-r-1"></i>
+                                        <span class="text-uppercase"><strong>Lan</strong></span></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="small v-a-m">
+                                        <td>Wi-Fi</td>
+                                        <td class="text-right v-a-m text-white"><i class="fa fa-fw fa-sort"></i></td>
+                                    </tr>
+                                    <tr class="small v-a-m">
+                                        <td>IP</td>
+                                        <td class="text-right v-a-m text-white"><samp><span>88.117.190.233</span></samp></td>
+                                    </tr>
+                                    <tr class="small v-a-m">
+                                        <td>MAC</td>
+                                        <td class="text-right v-a-m text-white"><samp><span>d4:78:75:0c:7f:8f</span></samp></td>
+                                    </tr>
+                                    <tr class="small v-a-m">
+                                        <td>
+                                            <i class="fa fa-long-arrow-down"></i>
+                                        </td>
+                                        <td class="text-right v-a-m text-white"><span class="m-r-1">586.00  KB/s</span>
+                                            <span>769.00 MB</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="small v-a-m">
+                                        <td>
+                                            <i class="fa fa-long-arrow-up text-white"></i>
+                                        </td>
+                                        <td class="text-right v-a-m text-white"><span class="m-r-1">379.00  KB/s</span>
+                                            <span>526.00 MB</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- END Table: LAN -->
+                            <!-- START Widget - Usage -->
+                            <ul class="list-group b-a-0 m-t-3">
+                                <li class="list-group-item">
+                                    <i class="fa fa-hdd-o small m-r-1"></i> <span class="text-uppercase small m-t-0"><strong>Macintosh</strong> <span class="pull-right text-right text-white"><span>251.00</span></span>
+                                </span>
+                                <div class="progress b-r-a-0 m-t-1 m-b-1 h-3">
+                                    <div class="progress-bar" role="progressbar" style="width: 60%">
+                                        <span class="sr-only">60% Complete</span>
+                                    </div>
+                                </div>
+                                <span class="text-uppercase small m-t-0"><strong class="text-white"><span>783.00 GB</span></strong>
+                                    <span class="small"> / 145.00 GB</span></span>
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-hdd-o small m-r-1"></i> <span class="text-uppercase small m-t-2"><strong>Windows</strong>
+                                    <span class="pull-right text-right text-white"><span>305.00</span></span>
+                                </span>
+                                <div class="progress b-r-a-0 m-t-1 m-b-1 h-3">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                                        <span class="sr-only">60% Complete</span>
+                                    </div>
+                                </div>
+                                <span class="text-uppercase small m-t-0"><strong class="text-white"><span>108.00 GB</span></strong>
+                                    <span class="small"> / 23.00 GB</span></span>
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-hdd-o small m-r-1"></i> <span class="text-uppercase small m-t-2"><strong>Linux</strong>
+                                    <span class="pull-right text-right text-white"><span>535.00</span></span>
+                                </span>
+                                <div class="progress b-r-a-0 m-t-1 m-b-1 h-3">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                        <span class="sr-only">60% Complete</span>
+                                    </div>
+                                </div>
+                                <span class="text-uppercase small m-t-0"><strong class="text-white"><span>684.00 GB</span></strong>
+                                    <span class="small"> / 682.00 GB</span></span>
+                            </li>
+                        </ul>
+                        <!-- END Widget - Usage -->
+                    </div>
+                    <!-- END Tab: Statisticts -->
+
+                    <!-- START Tab: Users -->
+                    <div class="tab-pane fade p-r-1" id="right-sidebar-users" role="tabpanel">
+                    <p class="small text-uppercase m-b-2 m-t-1"><strong>Users with Chat</strong></p>
+                        <!-- START Search Input -->
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button"><i class="fa fa-fw fa-search"></i></button>
+                            </span>
+                        </div>
+                        <!-- END Search Input -->
+                        <!-- DodatkowyContent: data-target-extra-content wskazuje, że ten konkretny div ma być przykrywany przez kontener o id chatpanel -->
+                        <div class="m-t-1" data-target-extra-content="chatpanel">
+
+
+                <ul class="nav nav-pills nav-stacked">
+
+                    <li role="presentation">
+                     <p class="small text-uppercase m-t-2"><strong>Online (3)</strong></p>
+                    </li>
+
+                    <!-- START User Online (Small) -->
+                    <li role="presentation">
+                        <a href="#" class="extra-content-open">
+                            <div class="media">
+                                <div class="media-left media-middle">
+                                    <div class="avatar avatar-image avatar-sm">
+                                        <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/levisan/128.jpg" alt="Avatar">
+                                        <i class="avatar-status avatar-status-bottom bg-success b-brand-gray-darker"></i>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="m-t-0 m-b-0"><span>Anika Bashirian</span></h5>
+                                    <p class="small text-muted m-b-0"><span>Central Research Specialist</span></p>
+                                </div>
+                                <div class="media-right media-middle">
+                                    <span class="badge">4</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- START User Online (Small) -->
+
+                    <!-- START User Online (Small) -->
+                    <li role="presentation">
+                        <a href="#" class="extra-content-open">
+                            <div class="media">
+                                <div class="media-left media-middle">
+                                    <div class="avatar avatar-image avatar-sm">
+                                        <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/catarino/128.jpg" alt="Avatar">
+                                        <i class="avatar-status avatar-status-bottom bg-success b-brand-gray-darker"></i>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="m-t-0 m-b-0"><span>Margaretta Cormier</span></h5>
+                                    <p class="small text-gray-lighter m-b-0"><span>District Accountability Developer</span></p>
+                                </div>
+
+                                <div class="media-right media-middle">
+
+                                </div>
+
+                            </div>
+                        </a>
+                    </li>
+                    <!-- START User Online (Small) -->
+
+                    <!-- START User Online (Small) -->
+                    <li role="presentation">
+                        <a href="#" class="extra-content-open">
+                            <div class="media">
+                                <div class="media-left media-middle">
+                                    <div class="avatar avatar-image avatar-sm">
+                                        <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/karthipanraj/128.jpg" alt="Avatar">
+                                        <i class="avatar-status avatar-status-bottom bg-success b-brand-gray-darker"></i>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="m-t-0 m-b-0"><span>Ardith Bednar</span></h5>
+                                    <p class="small text-gray-lighter m-b-0"><span>Global Implementation Producer</span></p>
+                                </div>
+
+                                <div class="media-right media-middle">
+
+                                    <span class="badge bg-danger">13</span>
+
+                                </div>
+
+                            </div>
+                        </a>
+                    </li>
+                    <!-- START User Online (Small) -->
+                    <li role="presentation">
+                       <p class="small text-uppercase m-t-2"><strong>Busy (3)</strong></p>
+                    </li>
+
+                    <!-- START User Online (Busy) -->
+                    <li class="collapsed" role="presentation">
+                        <a href="#" class="extra-content-open">
+                            <div class="media">
+                                <div class="media-left media-middle">
+                                    <div class="avatar avatar-image avatar-sm">
+                                        <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/mrmartineau/128.jpg" alt="Avatar">
+                                        <i class="avatar-status avatar-status-bottom bg-danger b-brand-gray-darker"></i>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="m-t-0 m-b-0"><span>Linnie Kiehn</span></h5>
+                                    <p class="small text-muted m-b-0"><span>Global Paradigm Producer</span></p>
+                                </div>
+
+                                <div class="media-right media-middle">
+
+                                </div>
+
+                            </div>
+                        </a>
+                    </li>
+                    <!-- START User Online (Busy) -->
+
+                    <!-- START User Online (Busy) -->
+                    <li role="presentation">
+                        <a href="#" class="extra-content-open">
+                            <div class="media">
+                                <div class="media-left media-middle">
+                                    <div class="avatar avatar-image avatar-sm">
+                                        <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/mighty55/128.jpg" alt="Avatar">
+                                        <i class="avatar-status avatar-status-bottom bg-danger b-brand-gray-darker"></i>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="m-t-0 m-b-0"><span>Lane Blanda</span></h5>
+                                    <p class="small text-muted m-b-0"><span>Legacy Tactics Coordinator</span></p>
+                                </div>
+
+                                <div class="media-right media-middle">
+
+                                </div>
+
+                            </div>
+                        </a>
+                    </li>
+                    <!-- START User Online (Busy) -->
+
+                                        <!-- START User Online (Busy) -->
+                    <li role="presentation">
+                        <a href="#" class="extra-content-open">
+                            <div class="media">
+                                <div class="media-left media-middle">
+                                    <div class="avatar avatar-image avatar-sm">
+                                        <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/joe_black/128.jpg" alt="Avatar">
+                                        <i class="avatar-status avatar-status-bottom bg-danger b-brand-gray-darker"></i>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="m-t-0 m-b-0"><span>Newton Crist</span></h5>
+                                    <p class="small text-muted m-b-0"><span>Lead Marketing Assistant</span></p>
+                                </div>
+
+                                <div class="media-right media-middle">
+
+                                </div>
+
+                            </div>
+                        </a>
+                    </li>
+                    <!-- START User Online (Busy) -->
+
+                <li role="presentation">
+                    <p class="small text-uppercase m-t-2"><strong>Away (3)</strong></p>
+                </li>
+
+                    <!-- START User Online (Away) -->
+                    <li role="presentation">
+                        <a href="#" class="extra-content-open">
+                            <div class="media">
+                                <div class="media-left media-middle">
+                                    <div class="avatar avatar-image avatar-sm">
+                                        <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/herbigt/128.jpg" alt="Avatar">
+                                        <i class="avatar-status avatar-status-bottom bg-warning b-brand-gray-darker"></i>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="m-t-0 m-b-0"><span>Paul Durgan</span></h5>
+                                    <p class="small text-muted m-b-0"><span>Chief Marketing Engineer</span></p>
+                                </div>
+
+                                <div class="media-right media-middle">
+
+                                </div>
+
+                            </div>
+                        </a>
+                    </li>
+                    <!-- START User Online (Away) -->
+
+                    <!-- START User Online (Away) -->
+                    <li role="presentation">
+                        <a href="#" class="extra-content-open">
+                            <div class="media">
+                                <div class="media-left media-middle">
+                                    <div class="avatar avatar-image avatar-sm">
+                                        <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/diesellaws/128.jpg" alt="Avatar">
+                                        <i class="avatar-status avatar-status-bottom bg-warning b-brand-gray-darker"></i>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="m-t-0 m-b-0"><span>Axel Morissette</span></h5>
+                                    <p class="small text-muted m-b-0"><span>Product Tactics Producer</span></p>
+                                </div>
+
+                                <div class="media-right media-middle">
+
+                                </div>
+
+                            </div>
+                        </a>
+                    </li>
+                    <!-- START User Online (Away) -->
+
+                    <!-- START User Online (Away) -->
+                    <li role="presentation">
+                        <a href="#" class="extra-content-open">
+                            <div class="media">
+                                <div class="media-left media-middle">
+                                    <div class="avatar avatar-image avatar-sm">
+                                        <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/naitanamoreno/128.jpg" alt="Avatar">
+                                        <i class="avatar-status avatar-status-bottom bg-warning b-brand-gray-darker"></i>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="m-t-0 m-b-0"><span>Marcia Schmidt</span></h5>
+                                    <p class="small text-muted m-b-0"><span>Corporate Communications Orchestrator</span></p>
+                                </div>
+
+                                <div class="media-right media-middle">
+
+                                </div>
+
+                            </div>
+                        </a>
+                    </li>
+                    <!-- START User Online (Away) -->
+
+                    <li role="presentation">
+                        <p class="small text-uppercase m-t-2"><strong>Offline (3)</strong></p>
+                    </li>
+
+                    <!-- START User Online (Away) -->
+                    <li role="presentation">
+                        <a href="#" class="extra-content-open">
+                            <div class="media">
+                                <div class="media-left media-middle">
+                                    <div class="avatar avatar-image avatar-sm">
+                                        <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/byrnecore/128.jpg" alt="Avatar">
+                                        <i class="avatar-status avatar-status-bottom bg-gray-lighter b-brand-gray-darker"></i>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="m-t-0 m-b-0"><span>Manuela Effertz</span></h5>
+                                    <p class="small text-muted m-b-0"><span>Direct Functionality Administrator</span></p>
+                                </div>
+
+                                <div class="media-right media-middle">
+
+                                </div>
+
+                            </div>
+                        </a>
+                    </li>
+                    <!-- START User Online (Away) -->
+
+                    <!-- START User Online (Away) -->
+                    <li role="presentation">
+                        <a href="#" class="extra-content-open">
+                            <div class="media">
+                                <div class="media-left media-middle">
+                                    <div class="avatar avatar-image avatar-sm">
+                                        <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/r_garcia/128.jpg" alt="Avatar">
+                                        <i class="avatar-status avatar-status-bottom bg-gray-lighter b-brand-gray-darker"></i>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="m-t-0 m-b-0"><span>Kristian Howell</span></h5>
+                                    <p class="small text-muted m-b-0"><span>Customer Factors Facilitator</span></p>
+                                </div>
+
+                                <div class="media-right media-middle">
+
+                                </div>
+
+                            </div>
+                        </a>
+                    </li>
+                    <!-- START User Online (Away) -->
+
+                    <!-- START User Online (Away) -->
+                    <li role="presentation">
+                        <a href="#" class="extra-content-open">
+                            <div class="media">
+                                <div class="media-left media-middle">
+                                    <div class="avatar avatar-image avatar-sm">
+                                        <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/0therplanet/128.jpg" alt="Avatar">
+                                        <i class="avatar-status avatar-status-bottom bg-gray-lighter b-brand-gray-darker"></i>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="m-t-0 m-b-0"><span>Major Howell</span></h5>
+                                    <p class="small text-muted m-b-0"><span>Central Operations Planner</span></p>
+                                </div>
+
+                                <div class="media-right media-middle">
+
+                                </div>
+
+                            </div>
+                        </a>
+                    </li>
+                    <!-- START User Online (Away) -->
+
+                </ul>
+
+                        </div>
+
+                        <!-- START Chat Content (Hide Tab: Users) -->
+                        <div class="right-sidebar-extra-content p-r-2" id="chatpanel">
+
+<div class="panel panel-default m-t-3">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-xs-3"><a class="extra-content-close small" href="javascript:void(0);"><i class="fa fa-fw fa-chevron-left"></i></a></div>
+            <div class="col-xs-6 text-center"><span>G. Herman</span></div>
+            <div class="col-xs-3 text-right"><a href="#" class="text-gray-lighter"><i class="fa fa-fw fa-circle text-success"></i></a></div>
+        </div>
+    </div>
+
+<div class="panel-body">
+
+<!-- START Left Chat -->
+<div class="media">
+    <div class="media-left">
+        <div class="avatar avatar-image avatar-sm">
+            <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/mactopus/128.jpg" alt="Avatar">
+            <i class="avatar-status avatar-status-bottom bg-warning b-brand-gray-darker"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <div class="panel-default">
+            <div class="panel-body bg-gray-dark text-white b-r-a-3">
+                <span>Dolorum quibusdam dolore sint.</span>
+            </div>
+        </div>
+        <h6 class="m-t-1"><span>Matilda Bayer</span>   <small><span> 04:27</span></small></h6>
+    </div>
+</div>
+<!-- END Left Chat -->
+
+<!-- START Right Chat -->
+<div class="media m-b-0">
+    <div class="media-body">
+        <div class="panel-default">
+            <div class="panel-body bg-primary text-white b-r-a-3">
+                <span>Sequi numquam et dolores nemo ut est at suscipit.</span>
+            </div>
+        </div>
+        <h6 class="m-t-1"><span>Sallie Fritsch</span>   <small><span> 08:16</span></small></h6>
+    </div>
+    <div class="media-right">
+        <div class="avatar avatar-image avatar-sm">
+            <img class="media-object img-circle" alt="Avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/mtolokonnikov/128.jpg">
+            <i class="avatar-status avatar-status-bottom bg-danger b-brand-gray-darker"></i>
+        </div>
+    </div>
+</div>
+<!-- END Right Chat -->
+
+<!-- START Left Chat -->
+<div class="media">
+    <div class="media-left">
+        <div class="avatar avatar-image avatar-sm">
+            <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/caseycavanagh/128.jpg" alt="Avatar">
+            <i class="avatar-status avatar-status-bottom bg-success b-brand-gray-darker"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <div class="panel-default">
+            <div class="panel-body bg-gray-dark text-white b-r-a-3">
+                <span>Possimus non rerum natus quam rerum quis a doloremque. Laborum laboriosam unde voluptatum possimus aspernatur in debitis.</span>
+            </div>
+        </div>
+        <h6 class="m-t-1"><span>Katelyn Wiegand</span>   <small><span>06:12</span></small></h6>
+    </div>
+</div>
+<!-- END Left Chat -->
+
+<!-- START Right Chat -->
+<div class="media m-b-0">
+    <div class="media-body">
+        <div class="panel-default">
+            <div class="panel-body bg-gray-dark text-white b-r-a-3">
+                <span>Eum dignissimos consequatur eaque.</span>
+            </div>
+        </div>
+        <h6 class="m-t-1"><span>Dedric Windler</span>   <small><span> 01:12</span></small></h6>
+    </div>
+    <div class="media-right">
+        <div class="avatar avatar-image avatar-sm">
+            <img class="media-object img-circle" alt="Avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/namankreative/128.jpg">
+            <i class="avatar-status avatar-status-bottom bg-danger b-brand-gray-darker"></i>
+        </div>
+    </div>
+</div>
+<!-- END Right Chat -->
+
+</div>
+
+<!-- START Input Your Message -->
+<div class="panel-footer">
+    <div class="input-group input-group-sm">
+        <span class="input-group-btn">
+             <button class="btn btn-default" type="button">
+                 <i class="fa fa-fw fa-plus"></i>
+             </button>
+         </span>
+        <input type="text" class="form-control" placeholder="Your Message...">
+        <span class="input-group-btn">
+            <button class="btn btn-primary" type="button">Go!</button>
+        </span>
+    </div>
+</div>
+<!-- END Input Your Message -->
+
+</div>
+
+                        </div>
+                        <!-- END Chat Content (Hide Tab: Users) -->
+                    </div>
+                    <!-- END Tab: Users -->
+
+                    <!-- START Tab: Settings -->
+                    <div class="tab-pane fade p-r-1" id="right-sidebar-settings" role="tabpanel">
+
+<p class="text-uppercase small m-t-1 m-b-2"><strong>Settings</strong></p>
+
+                       <div class="row m-b-1">
+                           <div class="col-sm-6"><span class="text-white">Notifications</span></div>
+                            <div class="col-sm-6 text-right"> <input type="checkbox" class="js-switch-small" checked="checked"></div>
+                       </div>
+                        <p class="m-b-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+                            <div class="row m-b-1">
+                           <div class="col-sm-6"><span class="text-white">Activity</span></div>
+                            <div class="col-sm-6 text-right"><input type="checkbox" class="js-switch-small-primary" checked="checked"></div>
+                       </div>
+                        <p class="m-b-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+                         <div class="row m-b-1">
+                           <div class="col-sm-6"><span class="text-white">Statisticts</span></div>
+                            <div class="col-sm-6 text-right"><input type="checkbox" class="js-switch-small-warning" checked="checked"></div>
+                       </div>
+                        <p class="m-b-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+                            <div class="row m-b-1">
+                           <div class="col-sm-9"><span class="text-white">Settings for Responsive</span></div>
+                            <div class="col-sm-3 text-right"><input type="checkbox" class="js-switch-small-danger" checked="checked"></div>
+                       </div>
+                        <p class="m-b-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+                    </div>
+                    <!-- END Tab: Settings -->
+
+                    <!-- START Tab: Timeline -->
+                    <div class="tab-pane fade p-r-1" id="right-sidebar-timeline" role="tabpanel">
+
+                       <p class="text-uppercase small m-t-1 m-b-2"><strong>Timeline</strong></p>
+
+<!-- START Timeline - Active Entry (Day) -->
+<div class="timeline">
+    <!-- Timeline - Badge Date -->
+    <div class="timeline-date">
+        <span class="badge">Today</span>
+    </div>
+    <div class="timeline-item p-r-1">
+        <!-- Timeline - Mini Icon -->
+        <div class="timeline-icon">
+            <i class="fa fa-fw fa-times-circle text-danger"></i>
+        </div>
+
+        <!-- Timeline - Icon  -->
+        <div class="timeline-item-head clearfix m-b-0">
+            <!-- Timeline - Header & Subtitle -->
+
+            <!-- START Avatar, Message & Time -->
+            <div class="row">
+
+                <div class="col-lg-12 m-l-1">
+
+                    <span class="label label-danger label-outline">Alert</span>
+                    <br>
+                    <p class="text-white m-t-1"><span>We need to index the wireless XSS system!</span></p>
+                    <p class="text-nowrap small"><span>10-Nov-2015, 02:06</span>
+                    </p>
+                </div>
+            </div>
+            <!-- END Avatar, Message & Time -->
+
+        </div>
+    </div>
+</div>
+<!-- END Timeline - Active Entry (Day) -->
+
+<!-- START Timeline - Active Entry -->
+<div class="timeline">
+    <div class="timeline-item p-r-1">
+        <!-- Timeline - Mini Icon -->
+        <div class="timeline-icon">
+            <i class="fa fa-fw fa-exclamation-circle text-warning"></i>
+        </div>
+
+        <!-- Timeline - Icon  -->
+        <div class="timeline-item-head clearfix m-b-0">
+            <!-- Timeline - Header & Subtitle -->
+
+            <!-- START Avatar, Message & Time -->
+            <div class="row">
+
+                <div class="col-lg-12 m-l-1">
+
+                    <span class="label label-warning label-outline">Warning</span>
+                    <br>
+                    <p class="text-white m-t-1"><span>You can&apos;t bypass the array without navigating the cross-platform FTP driver!</span></p>
+                    <p class="text-nowrap small"><span>07-Sep-2014, 10:50</span>
+                    </p>
+                </div>
+            </div>
+            <!-- END Avatar, Message & Time -->
+
+        </div>
+    </div>
+</div>
+<!-- END Timeline - Active Entry -->
+
+<!-- START Timeline - Active Entry -->
+<div class="timeline">
+    <div class="timeline-item p-r-1">
+        <!-- Timeline - Mini Icon -->
+        <div class="timeline-icon">
+            <i class="fa fa-fw fa-info-circle text-info"></i>
+        </div>
+
+        <!-- Timeline - Icon  -->
+        <div class="timeline-item-head clearfix m-b-0">
+            <!-- Timeline - Header & Subtitle -->
+
+            <!-- START Avatar, Message & Time -->
+            <div class="row">
+
+                <div class="col-lg-12 m-l-1">
+
+                    <span class="label label-info label-outline">Info</span>
+                    <br>
+                    <p class="text-white m-t-1">15 Files Uploaded</p>
+                    <p class="text-nowrap small"><span>17-Dec-2012, 03:13</span>
+                     </p>
+                    <i class="m-l-1 fa fa-file-text-o fa-fw"></i> read_me.txt<br>
+                    <i class="m-l-1 fa fa-file-zip-o fa-fw"></i> all-files.zip<br>
+                     <i class="m-l-1 fa fa-file-word-o fa-fw"></i> alice-feedback.doc<br>
+
+                    <span class="badge m-t-1 m-b-1">+12</span>
+
+                </div>
+            </div>
+            <!-- END Avatar, Message & Time -->
+
+        </div>
+    </div>
+</div>
+<!-- END Timeline - Active Entry -->
+
+<!-- START Timeline - Active Entry -->
+<div class="timeline">
+    <div class="timeline-item p-r-1">
+        <!-- Timeline - Mini Icon -->
+        <div class="timeline-icon">
+            <i class="fa fa-fw fa-plus-circle text-primary"></i>
+        </div>
+
+        <!-- Timeline - Icon  -->
+        <div class="timeline-item-head clearfix m-b-0">
+            <!-- Timeline - Header & Subtitle -->
+
+            <!-- START Avatar, Message & Time -->
+            <div class="row">
+
+                <div class="col-lg-12 m-l-1">
+
+                    <span class="label label-primary label-outline">Message</span>
+                    <br>
+                    <p class="text-white m-t-1">6 users have been accepted by the Admin</p>
+                    <p class="text-nowrap small"><span>13-Feb-2015, 02:41</span>
+                     </p>
+                               <div class="m-b-1">
+                                <img class="img-circle avatar avatar-sm" src="https://s3.amazonaws.com/uifaces/faces/twitter/buleswapnil/128.jpg" alt="Avatar">
+                                <img class="img-circle avatar avatar-sm" src="https://s3.amazonaws.com/uifaces/faces/twitter/rickyyean/128.jpg" alt="Avatar">
+                                <img class="img-circle avatar avatar-sm" src="https://s3.amazonaws.com/uifaces/faces/twitter/cofla/128.jpg" alt="Avatar">
+                                <img class="img-circle avatar avatar-sm" src="https://s3.amazonaws.com/uifaces/faces/twitter/alek_djuric/128.jpg" alt="Avatar">
+                                <img class="img-circle avatar avatar-sm" src="https://s3.amazonaws.com/uifaces/faces/twitter/a_harris88/128.jpg" alt="Avatar">
+                                <img class="img-circle avatar avatar-sm" src="https://s3.amazonaws.com/uifaces/faces/twitter/overcloacked/128.jpg" alt="Avatar">
+                                </div>
+                </div>
+            </div>
+            <!-- END Avatar, Message & Time -->
+
+        </div>
+    </div>
+</div>
+<!-- END Timeline - Active Entry -->
+
+ <!-- START Timeline - Active Entry (Day) -->
+<div class="timeline">
+    <!-- Timeline - Badge Date -->
+    <div class="timeline-date">
+        <span class="badge">Yesterday</span>
+    </div>
+    <div class="timeline-item p-r-1">
+        <!-- Timeline - Mini Icon -->
+        <div class="timeline-icon">
+            <i class="fa fa-fw fa-check-circle text-success"></i>
+        </div>
+
+        <!-- Timeline - Icon  -->
+        <div class="timeline-item-head clearfix m-b-0">
+            <!-- Timeline - Header & Subtitle -->
+
+            <!-- START Avatar, Message & Time -->
+            <div class="row">
+
+                <div class="col-lg-12 m-l-1">
+
+                    <span class="label label-success label-outline">Success</span>
+                    <br>
+                    <p class="text-white m-t-1"><span>Use the mobile IB alarm, then you can program the digital application!</span></p>
+                    <p class="text-nowrap small"><span>28-May-2012, 07:42</span>
+                    </p>
+
+                    <p><span>Quidem aut delectus nemo earum hic deleniti nisi numquam.</span></p>
+                </div>
+            </div>
+            <!-- END Avatar, Message & Time -->
+
+        </div>
+    </div>
+</div>
+<!-- END Timeline - Active Entry (Day) -->
+
+ <!-- START Timeline - Active Entry -->
+<div class="timeline">
+
+    <div class="timeline-item p-r-1">
+        <!-- Timeline - Mini Icon -->
+        <div class="timeline-icon">
+            <i class="fa fa-fw fa-circle text-gray"></i>
+        </div>
+
+        <!-- Timeline - Icon  -->
+        <div class="timeline-item-head clearfix m-b-0">
+            <!-- Timeline - Header & Subtitle -->
+
+            <!-- START Avatar, Message & Time -->
+            <div class="row">
+
+                <div class="col-lg-12 m-l-1">
+
+                    <span class="label label-gray label-outline">Obsolete</span>
+                    <br>
+                    <del><p class="m-t-1"><span>The SMS pixel is down, quantify the haptic port so we can parse the XML panel!</span></p></del>
+                    <p class="text-nowrap small"><span>25-Dec-2011, 04:32</span>
+                    </p>
+                </div>
+            </div>
+            <!-- END Avatar, Message & Time -->
+
+        </div>
+    </div>
+</div>
+<!-- END Timeline - Active Entry  -->
+                        </div>
+                        <!-- END Tab: Timeline -->
+                    </div>
+                                    <!-- END Tabs All Content --></div>
+                </div>
+    </div>
+    <!-- START Content Show in Full-Height -->
+    <div class="right-sidebar-extra-content" id="chatpanel2">
+        <a href="#" class="extra-content-close">Back</a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ipsa, rem. Accusantium autem blanditiis dolor ducimus earum eius eligendi, eos est exercitationem id illo in mollitia neque optio pariatur placeat quisquam recusandae reiciendis repellat reprehenderit. Amet at deleniti dicta distinctio dolorem eveniet hic id, iusto magnam maxime modi officiis perspiciatis porro praesentium quas, recusandae repudiandae rerum tempora totam unde velit voluptate, voluptatem. Alias consequatur consequuntur et nisi quibusdam quo quos ut. Asperiores commodi deserunt dicta dolor eligendi ex fugit, harum itaque laborum maiores mollitia nam nihil obcaecati officiis quae quis repellendus tenetur voluptate. Eos ratione saepe voluptatibus? Animi, illo magni!</p>
+    </div>
+    <!-- END Content Show in Full-Height -->
+</div>
+
+        <!-- START Footer -->
+<footer>
+    <div class="container-fluid">
+        <p class="text-gray-dark">
+            © 2016 - Your Company Name
+        </p>
+    </div>
+</footer>
+<!-- END Footer -->
+
+    </div>
+
+    <link rel="stylesheet" href="assets/vendor/css/lib.min.css">
+
+    <!-- JS -->
+    <script src="assets/javascript/app/helpers.js"></script>
+    <script src="assets/javascript/app/layoutControl.js"></script>
+    <script src="assets/javascript/app/rightSidebar.js"></script>
+    <script src="assets/javascript/app/sidebar.js"></script>
+    <script src="assets/javascript/app/main.js"></script>
+   
+</body>
+
 </html>

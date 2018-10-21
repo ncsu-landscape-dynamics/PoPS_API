@@ -1,8 +1,9 @@
+const { authenticate } = require('@feathersjs/authentication').hooks;
 
 
 module.exports = {
   before: {
-    all: [],
+    all: [],//authenticate('jwt')],
     find: [],
     get: [],
     create: [],
@@ -14,7 +15,26 @@ module.exports = {
   after: {
     all: [],
     find: [],
-    get: [],
+    get: [  async function(context) {
+        context.result.geom = {
+           "type": "Feature",
+           "geometry": {
+               "type": "Polygon",
+               "coordinates": [
+                   [
+                       [100.0, 0.0],
+                       [101.0, 0.0],
+                       [101.0, 1.0],
+                       [100.0, 1.0],
+                       [100.0, 0.0]
+                   ]
+               ]
+           }
+
+      }
+      return context;
+      }
+    ],
     create: [],
     update: [],
     patch: [],

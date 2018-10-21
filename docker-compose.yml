@@ -4,6 +4,8 @@ services:
     container_name: app
     restart: always
     build: .
+    volumes:
+      - ./:/usr/src/app
     ports:
       - "3030:3030"
     links:
