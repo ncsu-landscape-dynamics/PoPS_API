@@ -6,6 +6,7 @@ module.exports = function (app) {
   const mongooseClient = app.get('mongooseClient');
   const { Schema } = mongooseClient;
   const ObjectId = Schema.Types.ObjectId;
+
   const runs = new Schema({
     stochasticResults: { type: Number, required: true },
     probabilityResults: { type: Number, required: true },
